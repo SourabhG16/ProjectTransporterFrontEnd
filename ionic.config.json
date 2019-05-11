@@ -1,0 +1,7 @@
+{
+  "name": "TransporterUI",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

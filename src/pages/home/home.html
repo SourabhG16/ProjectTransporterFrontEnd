@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Delivery App</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+/*
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+      */
+    </style>
+  </head>
+  <body>
+      <ion-content>
+        <div id='map' class='contain'>           
+       </div>
+       <ion-fab bottom right #fab class="space-fab-list">
+          <button ion-fab #fabBtn mini class="fab-button" ><ion-icon name="add"></ion-icon></button>
+          <ion-fab-list #fabList side="top" class="side-list">
+              <button ion-fab class="space-fab-button home" (click)="openHome()">Home</button>
+              <button ion-fab *ngFor="let st of stations" class="fab-button" (click)="doSomething(button)">{{ st.name }}</button>
+          </ion-fab-list>
+        </ion-fab>
+       </ion-content>
+  </body>
+</html>
+
+
+
