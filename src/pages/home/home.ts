@@ -1,31 +1,38 @@
 //import {DataService} from '../../DataService.js'
 import { Component,ViewChild} from '@angular/core';
 import { NavController ,FabContainer} from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { DestListPage } from '../dest-list/dest-list'
 import * as mapboxgl from 'mapbox-gl'
 import * as turf from 'turf/turf.min.js'
 import $ from "jquery";
 // @IonicPage()
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController,private alertCtrl: AlertController,private ModalController:ModalController) {
+     let notificationsNumber=5;
   }
+  
   @ViewChild('fab')fab : FabContainer;
-  stations=[
-    {name:'bibewadi'},
-    {name:'Shivaji Nagar'}
-  ];
+  
   ionViewDidLoad(){
     mapboxgl.accessToken = "pk.eyJ1IjoiY29kZXJtZTcyNzYiLCJhIjoiY2p2aHM5aDNhMDZoODN5cDZzZjlpM2pzMCJ9.uBcxowgZ4Uck3Sd-Zm9JJw"
     this.presentPrompt();
     this.init();
   }
+  async presentModal() {
+    const modal = await this.ModalController.create(DestListPage);
+    modal.dismiss();
+   return await modal.present();
+  }
   init()
   {
+    
     var truckLocation = [ 73.833653,18.536765];
       var warehouseLocation = [ 73.838932,18.537662];
       var station1=[73.875198,18.481164]

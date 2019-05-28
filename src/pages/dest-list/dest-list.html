@@ -1,0 +1,28 @@
+<!--
+  Generated template for the DestListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DestList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list *ngFor="let st of stations">
+        <ion-item-sliding>
+          <ion-item>
+            <ion-label>{{st}}</ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option (click)="Done(st)">TransportDone</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        </ion-list>
+      <ion-button shape="round" color="secondary" expand="block" fill="solid" (click)="closeModal()">Close</ion-button>
+</ion-content>

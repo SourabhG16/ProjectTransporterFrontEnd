@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PopupModule } from 'ng2-opd-popup';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DestListPage } from '../pages/dest-list/dest-list';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     LoginPage,
     RegisterPage,
-    FirstPage,
+    FirstPage, 
+    DestListPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     FirstPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    DestListPage
+
   ],
   providers: [
     StatusBar,

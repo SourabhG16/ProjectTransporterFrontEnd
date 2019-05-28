@@ -33,4 +33,17 @@ page-home {
       max-width: 400px;
       font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
       } 
+      #fbbutton {
+          background-color: rgb(127, 243, 131); /* Green */
+          border: none;
+          color: blue;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 8px;
+          margin: 2px 1px;
+          cursor: pointer;
+      }
+      
 }
