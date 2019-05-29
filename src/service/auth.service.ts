@@ -10,10 +10,8 @@ import {GlobalVarService} from '../global-var.service';
 export class AuthService {
   Url = environment.url;
   constructor(private http: HttpClient,public global_var: GlobalVarService) {
-
   }
-  
-loadStations(data) {
+loadStations(data:number) {
     return this.http.post('http://ec2-52-66-169-149.ap-south-1.compute.amazonaws.com:80/api/first/pickk',data)
     .pipe(
       tap(res => {

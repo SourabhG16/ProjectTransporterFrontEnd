@@ -803,7 +803,7 @@ function objectToArray(obj) {
 }
   }
   
-  async presentPrompt() {
+   presentPrompt() {
     let alert = this.alertCtrl.create({
       title: 'Enter Number of Available Spaces:',
       inputs: [
@@ -831,6 +831,6 @@ function objectToArray(obj) {
         }
       ]
     });
-    await alert.present();
+     alert.present();
 }
 }
