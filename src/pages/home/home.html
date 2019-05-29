@@ -11,31 +11,16 @@
         margin: 0;
         padding: 0;
       }
-/*
-      #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-      }
-      */
     </style>
   </head>
   <body>
       <ion-content>
-        <div id='map' class='contain'>           
+        <div id='map'>           
        </div>
        <ion-button size="small" shape="round" color="medium" (click)="presentModal()" id="floating-panel">
           <ion-icon name="notifications"></ion-icon>
           <ion-badge color="dark" slot="end">{{notificationsNumber}}</ion-badge>
       </ion-button>
-       <!-- <ion-fab bottom right #fab class="space-fab-list">
-          <button ion-fab #fabBtn mini class="fab-button" ><ion-icon name="add"></ion-icon></button>
-          <ion-fab-list #fabList side="top" class="side-list"> 
-              <button ion-fab *ngFor="let st of stations" id="fbbutton" (click)="doSomething(button)">{{ st.name }}</button>
-          </ion-fab-list>
-        </ion-fab> -->
        </ion-content>
   </body>
 </html>

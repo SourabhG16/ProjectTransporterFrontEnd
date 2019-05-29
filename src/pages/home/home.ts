@@ -4,6 +4,7 @@ import { NavController ,FabContainer} from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DestListPage } from '../dest-list/dest-list'
+import {GlobalVarService} from '../../global-var.service';
 import * as mapboxgl from 'mapbox-gl'
 import * as turf from 'turf/turf.min.js'
 import $ from "jquery";
@@ -14,12 +15,12 @@ import $ from "jquery";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController,private ModalController:ModalController) {
-     let notificationsNumber=5;
+  notificationsNumber:number;
+  constructor(public navCtrl: NavController,private alertCtrl: AlertController,private ModalController:ModalController,public global_var:GlobalVarService) {
+     this.notificationsNumber=this.global_var.Stations.length;
   }
-  
+
   @ViewChild('fab')fab : FabContainer;
-  
   ionViewDidLoad(){
     mapboxgl.accessToken = "pk.eyJ1IjoiY29kZXJtZTcyNzYiLCJhIjoiY2p2aHM5aDNhMDZoODN5cDZzZjlpM2pzMCJ9.uBcxowgZ4Uck3Sd-Zm9JJw"
     this.presentPrompt();
@@ -32,7 +33,6 @@ export class HomePage {
   }
   init()
   {
-    
     var truckLocation = [ 73.833653,18.536765];
       var warehouseLocation = [ 73.838932,18.537662];
       var station1=[73.875198,18.481164]

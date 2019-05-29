@@ -9,11 +9,11 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { PopupModule } from 'ng2-opd-popup';
+//import { PopupModule } from 'ng2-opd-popup';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DestListPage } from '../pages/dest-list/dest-list';
-
+import { GlobalVarService } from '../global-var.service';
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +28,7 @@ import { DestListPage } from '../pages/dest-list/dest-list';
   ],
   imports: [
     BrowserModule,
-    PopupModule,
+    //PopupModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -42,11 +42,11 @@ import { DestListPage } from '../pages/dest-list/dest-list';
     LoginPage,
     RegisterPage,
     DestListPage
-
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    GlobalVarService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
