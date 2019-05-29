@@ -14,6 +14,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DestListPage } from '../pages/dest-list/dest-list';
 import { GlobalVarService } from '../global-var.service';
+import {AuthService  } from "../service/auth.service";
+import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +30,7 @@ import { GlobalVarService } from '../global-var.service';
   ],
   imports: [
     BrowserModule,
-    //PopupModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -47,6 +49,7 @@ import { GlobalVarService } from '../global-var.service';
     StatusBar,
     SplashScreen,
     GlobalVarService,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

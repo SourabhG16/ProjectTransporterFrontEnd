@@ -4,7 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 export const environment = {
   production: false,
-  url: 'http://localhost:5000'
+  url: 'http://ec2-52-66-169-149.ap-south-1.compute.amazonaws.com:80'
 };
 
 /*

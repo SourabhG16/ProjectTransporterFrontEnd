@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController} from 'ionic-angular';
 import { GlobalVarService } from "../../global-var.service";
+import { AuthService } from "../../service/auth.service";
 /**
  * Generated class for the DestListPage page.
  *
@@ -13,9 +14,8 @@ import { GlobalVarService } from "../../global-var.service";
 })
 export class DestListPage {
   stations:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private modalCtl:ViewController,public global_var: GlobalVarService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private modalCtl:ViewController,public global_var: GlobalVarService,public AuthService:AuthService) {
     this.stations=this.global_var.Stations;
-    //this.global_var.Stations.push("Aundh","Kondhwa")
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DestListPage'+this.global_var.Stations);

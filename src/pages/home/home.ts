@@ -5,6 +5,7 @@ import { ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DestListPage } from '../dest-list/dest-list'
 import {GlobalVarService} from '../../global-var.service';
+import {AuthService} from '../../service/auth.service'
 import * as mapboxgl from 'mapbox-gl'
 import * as turf from 'turf/turf.min.js'
 import $ from "jquery";
@@ -15,8 +16,9 @@ import $ from "jquery";
   templateUrl: 'home.html'
 })
 export class HomePage {
+  avai_cycle;
   notificationsNumber:number;
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController,private ModalController:ModalController,public global_var:GlobalVarService) {
+constructor(public navCtrl: NavController,private alertCtrl: AlertController,private ModalController:ModalController,public global_var:GlobalVarService,public AuthService:AuthService) {
      this.notificationsNumber=this.global_var.Stations.length;
   }
 
@@ -801,7 +803,7 @@ function objectToArray(obj) {
 }
   }
   
-  presentPrompt() {
+  async presentPrompt() {
     let alert = this.alertCtrl.create({
       title: 'Enter Number of Available Spaces:',
       inputs: [
@@ -820,17 +822,15 @@ function objectToArray(obj) {
         },
         {
           text: 'Submit',
-          handler: data => {
-            if (1) {
-
-            } else {
-
-              return false;
-            }
+          handler: (data) => {
+              this.global_var.Avail_cycles=data.Spaces;
+              console.log(data.Spaces);
+              console.log(this.global_var.Avail_cycles);
+              this.AuthService.loadStations(this.global_var.Avail_cycles);
           }
         }
       ]
     });
-    alert.present();
+    await alert.present();
 }
 }
