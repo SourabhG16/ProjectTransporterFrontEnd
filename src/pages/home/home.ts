@@ -9,6 +9,7 @@ import {AuthService} from '../../service/auth.service'
 import * as mapboxgl from 'mapbox-gl'
 import * as turf from 'turf/turf.min.js'
 import $ from "jquery";
+import { FirstPage } from '../first/first';
 // @IonicPage()
 
 @Component({
@@ -18,7 +19,7 @@ import $ from "jquery";
 export class HomePage {
   avai_cycle;
   notificationsNumber:number;
-constructor(public navCtrl: NavController,private alertCtrl: AlertController,private ModalController:ModalController,public global_var:GlobalVarService,public AuthService:AuthService) {
+constructor(public navCtrl: NavController,private alertCtrl: AlertController,private ModalController:ModalController,public global_var:GlobalVarService,public AuthService:AuthService,public nav:NavController) {
      this.notificationsNumber=this.global_var.Stations.length;
   }
 
@@ -32,6 +33,10 @@ constructor(public navCtrl: NavController,private alertCtrl: AlertController,pri
     const modal = await this.ModalController.create(DestListPage);
     modal.dismiss();
    return await modal.present();
+  }
+  Logout()
+  {
+    this.nav.push(FirstPage);
   }
   init()
   {

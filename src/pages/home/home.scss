@@ -1,5 +1,6 @@
 page-home {
   #floating-panel {
+    border-radius: 20px !important;
     position: absolute;
     top: 10px;
     right: 5px;
@@ -44,5 +45,11 @@ page-home {
           margin: 2px 1px;
           cursor: pointer;
       }
-      
+      .ion-item-border {
+        
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        }
 }
