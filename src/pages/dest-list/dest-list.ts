@@ -14,8 +14,16 @@ import { AuthService } from "../../service/auth.service";
 })
 export class DestListPage {
   stations:any;
+  stationReq:any;
+  merge:any[];
+  count:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private modalCtl:ViewController,public global_var: GlobalVarService,public AuthService:AuthService) {
     this.stations=this.global_var.Stations;
+    this.stationReq=this.global_var.StationsReq;
+    this.merge=this.global_var.Stations.concat(this.global_var.StationsReq);
+    this.count=this.global_var.statNo;
+    console.log(this.merge);
+    console.log(this.global_var.statNo);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DestListPage'+this.global_var.Stations);
