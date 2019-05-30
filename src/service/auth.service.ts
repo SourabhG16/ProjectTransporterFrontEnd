@@ -12,9 +12,10 @@ export class AuthService {
   constructor(private http: HttpClient,public global_var: GlobalVarService) {
   }
 loadStations(data:number) {
-    return this.http.post('http://ec2-52-66-169-149.ap-south-1.compute.amazonaws.com:80/api/first/pickk',data)
-    .pipe(
-      tap(res => {
+  console.log("aa");
+    return this.http.post("http://ec2-52-66-169-149.ap-south-1.compute.amazonaws.com:80/api/first/pickk",data)
+    .pipe(  
+      tap(res => { 
             this.global_var.Stations=res['args'];
               console.log("res is"+res['args']);
               }),
